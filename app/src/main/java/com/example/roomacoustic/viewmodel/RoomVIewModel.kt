@@ -141,5 +141,13 @@ class RoomViewModel(app: Application) : AndroidViewModel(app) {
     fun setManualSpeakerPair(left: Vec3, right: Vec3) { _manualSpeakerPair.value = left to right }
     fun clearManualSpeakerPair() { _manualSpeakerPair.value = null }
 
+    fun clearMeasureAndSpeakers() {
+        // 라벨-값(폭/깊이/높이) 저장 구조가 무엇이든 여기서 초기화
+        // 예) _labeledMeasures.value = emptyMap()
+        // 혹은 _measure3DResult.value = null 등 프로젝트 구조에 맞게
+        // 스피커 리스트도 초기화
+        _speakers.clear()
+        _speakerBoxes.value = emptyList()
+    }
 
 }

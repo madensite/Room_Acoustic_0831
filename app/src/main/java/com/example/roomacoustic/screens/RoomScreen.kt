@@ -188,6 +188,7 @@ fun RoomScreen(
             if (!room.hasMeasure) {
                 SheetItem("측정 시작") {
                     tappedRoom = null
+                    vm.clearMeasureAndSpeakers()
                     nav.navigate(Screen.MeasureGraph.route)
                 }
             } else {
@@ -250,6 +251,7 @@ fun RoomScreen(
             SheetItem("재측정하기") {
                 vm.setMeasure(room.id, false)
                 longPressedRoom = null
+                vm.clearMeasureAndSpeakers()
                 nav.navigate(Screen.MeasureGraph.route)
             }
             SheetItem("대화 초기화") {
